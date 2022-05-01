@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React, {useRef} from "react";
 import PropTypes from "prop-types"
 import { gsap } from "gsap";
@@ -14,8 +7,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./styles/style.css"
 import "./layout.css"
+import { useHorizontalScroll } from "./UseHorizontalScroll"
+import HorizontalScroll from 'react-scroll-horizontal'
 
-gsap.registerPlugin(Draggable, ScrollTrigger);
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,6 +23,8 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const scrollRef = useHorizontalScroll();
+
   return (
     <>
       <div class="container">
@@ -35,17 +32,19 @@ const Layout = ({ children }) => {
             <div class="half1"></div>
             <div class="half2"></div>
         </div>
-        <div class="top-container">
+        <div ref={scrollRef} class="topcontainer">
+          <HorizontalScroll reverseScroll = {true}>
             <section class="slide slide1"><p>s1</p></section>
             <section class="slide slide2"><p>s2</p></section>
-            <section class="slide slide3"><p>s3</p></section> 
+            <section class="slide slide3"><p>s3</p></section>
+          </HorizontalScroll> 
         </div>
-
-        <div class="drag-proxy"></div>
     </div>
     </>
   )
 }
+
+
 
 
 //end
@@ -54,3 +53,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+
