@@ -1,81 +1,145 @@
-body,html {
-    margin: 0;
-    padding: 0;
-    /* overflow-x: hidden; */
+body, html {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
 }
-    
-    .container{
-        background-color: aqua;
-        height: 100vh;
-        width: 80vw;
-        display: grid;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .topcontainer, .bottom-container{
-        grid-area: 1 / 1;
-        /* overflow-y: hidden; */
-    }
-    
-    .bottom-container{
-        padding: 0;
-        width: 98.9vw;
-        background-color: aquamarine;
-        height: 100vh;
-        display: flex;
-        
-    }
-    
-    .half1{
-        width: 50vw;
-        background-color: blue;
-        height: 100vh;
-        /* overflow-y: hidden; */
-        
-    }
-    
-    .half2{
-        width: 50vw;
-        background-color: red;
-        height: 100vh;
-        /* overflow-y: hidden; */
-        
-    }
-    
-    .topcontainer{
-        cursor: grab;
-        padding: 0;
-        z-index: 2;
-        width: auto;
-        height: 100vh;
-        display: flex;
-        /* max-width: 100%; */
-        white-space: nowrap;
-        overflow-y: hidden;
-        /* overflow-x: hidden; */
-    }
-    .slide{
-        min-width: 100vw;
-        height: 100vh;
-        padding: 0;
-        
-    }
-    
-    .slide1{
-        background-color: rgba(255, 255, 0, 0.13);
-        
-    }
-    .slide2{
-        background-color: rgba(255, 192, 203, 0.184);
-        
-    }
-    .slide3{
-        background-color: rgba(192, 255, 253, 0.15);
-        
-    }
-    
-    .topcontainer > section > p{
-        margin: 0;
-        
-    } 
+
+.container {
+  background-color: aqua;
+  height: 100vh;
+  width: 80vw;
+  display: -ms-grid;
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+
+.topcontainer, .bottom-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+  /* overflow-y: hidden; */
+}
+
+.bottom-container {
+  padding: 0;
+  width: 98.9vw;
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+@media (min-width: 720px) {
+  .bottom-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.half1 {
+  background-color: blue;
+  /* overflow-y: hidden; */
+}
+
+@media (min-width: 0px) {
+  .half1 {
+    width: 100vw;
+    height: 50vh;
+  }
+}
+
+@media (min-width: 720px) {
+  .half1 {
+    width: 50vw;
+    height: 100vh;
+  }
+}
+
+.half2 {
+  background-color: red;
+  /* overflow-y: hidden; */
+}
+
+@media (min-width: 0px) {
+  .half2 {
+    width: 100vw;
+    height: 50vh;
+  }
+}
+
+@media (min-width: 720px) {
+  .half2 {
+    width: 50vw;
+    height: 100vh;
+  }
+}
+
+.topcontainer {
+  cursor: -webkit-grab;
+  cursor: grab;
+  padding: 0;
+  z-index: 2;
+  width: auto;
+  height: 100vh;
+  /* max-width: 100%; */
+  white-space: nowrap;
+  overflow-y: hidden;
+  /* overflow-x: hidden; */
+}
+
+@media (min-width: 720px) {
+  .topcontainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.topcontainer > section > p {
+  margin: 0;
+}
+
+.slide {
+  min-width: 100vw;
+  height: 100vh;
+  padding: 0;
+}
+
+@media (min-width: 720px) {
+  .slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.slide2 {
+  background-color: rgba(255, 192, 203, 0.184);
+}
+
+.slide3 {
+  background-color: rgba(192, 255, 253, 0.15);
+}
+
+.half {
+  border: thick #803e00 solid;
+}
+
+@media (min-width: 0px) {
+  .half {
+    width: 100vw;
+    height: 50vh;
+  }
+}
+
+@media (min-width: 720px) {
+  .half {
+    width: 50vw;
+    height: 100vh;
+  }
+}
+
+.about {
+  background-color: black;
+}
+/*# sourceMappingURL=style.css.map */
